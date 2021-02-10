@@ -1,7 +1,6 @@
 <?php
 function login($username, $password, $ip){
     $pdo = Database::getInstance()->getConnection();
-    ## TODO: Finish the following query to check if the username and password are matching in the DB
     $get_user_query = 'SELECT * FROM tbl_user WHERE user_name = :username AND user_pass=:password';
     $user_set = $pdo->prepare($get_user_query);
     $user_set->execute(
@@ -12,10 +11,10 @@ function login($username, $password, $ip){
     );
 
     if ($found_user = $user_set->fetch(PDO::FETCH_ASSOC)) {
-        //We found user in the DB, get him in!
+        //We found user in the DB, let them in!
         $found_user_id = $found_user['user_id'];
 
-        //Write thhe username and userid into session
+        //Write the username and user id into session
         $_SESSION['user_id'] = $found_user_id;
         $_SESSION['user_name'] = $found_user['user_fname']; // using first name but could be username
 
@@ -48,3 +47,4 @@ function logout(){
 
     redirect_to('admin_login.php');
 }
+
