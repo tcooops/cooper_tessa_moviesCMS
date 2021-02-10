@@ -7,6 +7,8 @@
     // turn display on for debugging only! Turn off in production environment
     //ini_set('display_errors', 1);
 
+    session_start();
+
     require_once ABSPATH.'/config/database.php';
     require_once ADMIN_SCRIPT_PATH.'/functions.php';
     require_once ADMIN_SCRIPT_PATH.'/read.php';
