@@ -2,6 +2,10 @@
     require_once '../load.php';
     $ip = $_SERVER['REMOTE_ADDR'];
 
+    if (isset($_SESSION['user_id'])) {
+        redirect_to("index.php"); // prevents someone who is logged in from accessing log in page. redirects them to index.php.
+    }
+    
     if(isset($_POST['submit'])) {
         $username = trim($_POST['username']);
         $password = trim($_POST['password']);

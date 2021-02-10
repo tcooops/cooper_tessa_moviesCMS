@@ -1,7 +1,9 @@
 <?php 
-require_once '../load.php'; ?>
+require_once '../load.php'; 
+confirm_logged_in(); // this function will amke sure only a logged in user will see the following. Verify using incogneto mode! 
+?>
 
-<!DOCTYPE html>
+<!DOCTYPE html>     
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,5 +13,8 @@ require_once '../load.php'; ?>
 </head>
 <body>
     <h1>Admin Dashboard</h1>
+    <h2>Welcome, <?php echo $_SESSION['user_name'];?>!</h2>
+
+    <a href="admin_logout.php">Sign Out</a>
 </body>
 </html>
