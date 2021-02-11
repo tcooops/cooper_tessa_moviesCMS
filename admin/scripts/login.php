@@ -17,9 +17,12 @@ function login($username, $password, $ip){
         //Write the username and user id into session
         $_SESSION['user_id'] = $found_user_id;
         $_SESSION['user_name'] = $found_user['user_fname']; // using first name but could be username
+        // this adds the user_date to the session 
+        $_SESSION['user_date'] = $found_user['user_date'];
+        // will be adding logins here soon...
 
-        //Update the user IP with the current one they're logged in with
-        $update_user_query = 'UPDATE tbl_user SET user_ip= :user_ip WHERE user_id=:user_id';
+        // 1) Here, I added the user_date to our query. I called on it in our admin/index.php to display. Exactly as we did with the displaying of the name. No research needed.
+        $get_date_query = 'UPDATE tbl_user SET user_ip= :user_ip, user_date WHERE user_id=:user_id';
         $update_user_set = $pdo->prepare($update_user_query);
         $update_user_set->execute(
             array(
@@ -44,7 +47,6 @@ function login($username, $password, $ip){
 
 function logout(){
     session_destroy();
-
     redirect_to('admin_login.php');
 }
 

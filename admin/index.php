@@ -14,7 +14,8 @@ confirm_logged_in(); // this function will amke sure only a logged in user will 
 <body>
     <h1>Admin Dashboard</h1>
     <h2>Welcome, <?php echo $_SESSION['user_name'];?>!</h2>
-    <h3>Last login: <?php echo $last_login['user_date'];?></h3>
+    <h5>Previous login: <?php echo $_SESSION['user_date'];?></h5>
+    <!-- number of times logged in will display here -->
 
     <a href="admin_logout.php">Sign Out</a>
 </body>
