@@ -1,3 +1,5 @@
+<!-- ADMIN LOGIN PAGE -->
+
 <?php
     require_once '../load.php';
     $ip = $_SERVER['REMOTE_ADDR'];
@@ -25,6 +27,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel</title>
+    <?php include 'templates/links.php'; ?>
 </head>
 <body>  
     <h1>Admin Panel</h1>
