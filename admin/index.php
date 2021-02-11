@@ -1,3 +1,5 @@
+<!-- ADMIN PANEL HOME PAGE -->
+
 <?php 
 require_once '../load.php'; 
 confirm_logged_in(); // this function will amke sure only a logged in user will see the following. Verify using incogneto mode! 
@@ -10,6 +12,7 @@ confirm_logged_in(); // this function will amke sure only a logged in user will 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
+    <?php include 'templates/links.php'; ?>
 </head>
 <body>
     <h1>Admin Dashboard</h1>
