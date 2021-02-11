@@ -1,5 +1,8 @@
 # Movie CMS
 
+## Description
+This project is a content management system for a movie database. Here, users will be able to login to an admin panel, access certain information, and have their own information displayed.
+
 #### Requirements
 * use a modern browser such as google chrome
 
