@@ -27,21 +27,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel</title>
-    <?php include 'templates/links.php'; ?>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Questrial&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/hps2ffl.css">
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>  
     <h1>Admin Panel</h1>
-    <?php include 'templates/header.php'; ?>
-        <div class="admin-login-wrapper">
-        <?php echo !empty($message)?$message:'';?>
-            <form action="admin_login.php" method="post">
-                <label for="username">Username:</label>
-                <input id="username" type="text" name="username" value="">
-                <label for="password">Password:</label>
-                <input id="password" type="password" name="password">
-                <button type="submit" name="submit">Submit</button>
-            </form>
-        </div>
-    <?php include 'templates/footer.php'; ?>
+            <?php echo !empty($message)?$message:'';?>
+                <form class="form" action="admin_login.php" method="post">
+                    <label for="username">Username:</label>
+                    <input id="username" type="text" name="username" value="">
+                    <label for="password">Password:</label>
+                    <input id="password" type="password" name="password">
+                    <button type="submit" name="submit">Submit</button>
+                    <br>
+                    <a href="../index.php">back to home</a>
+                </form>
 </body>
 </html>

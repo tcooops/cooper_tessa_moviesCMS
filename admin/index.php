@@ -12,14 +12,23 @@ confirm_logged_in(); // this function will amke sure only a logged in user will 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
-    <?php include 'templates/links.php'; ?>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Questrial&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/hps2ffl.css">
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
     <h1>Admin Dashboard</h1>
-    <h2>Welcome, <?php echo $_SESSION['user_name'];?>!</h2>
-    <h3>Previous login: <?php echo $_SESSION['user_date'];?></h3>
-    <!-- number of times logged in will display here -->
-
-    <a href="admin_logout.php">Sign Out</a>
+    <div class="admin-dashboard">
+        <h3>Welcome, <?php echo $_SESSION['user_name'];?>!</h3>
+        <h4>Previous login: <?php echo $_SESSION['user_date'];?></h4>
+        <h4>Number of logins: <?php echo $_SESSION['logins'];?></h4>
+        <!-- number of times logged in will display here -->
+        <a href="admin_logout.php">Sign Out</a>
+        <br>
+        <a href="../index.php">back to home</a>
+    </div>
 </body>
 </html>
