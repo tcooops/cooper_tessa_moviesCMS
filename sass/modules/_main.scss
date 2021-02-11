@@ -54,8 +54,6 @@ span {
     flex-wrap: wrap;
 }
 
-
-
 .movie-item {
     margin-top: 3em;
     width: 20%;
@@ -96,6 +94,7 @@ a:hover {
     text-decoration: none;
     color: rgb(255, 140, 78);
     font-style: italic;
+    cursor: pointer;
 }
 
 footer {
