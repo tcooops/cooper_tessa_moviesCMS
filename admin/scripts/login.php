@@ -21,8 +21,8 @@ function login($username, $password, $ip){
         $_SESSION['user_date'] = $found_user['user_date'];
         // will be adding logins here soon...
 
-        // 1) Here, I added the user_date to our query. I called on it in our admin/index.php to display. Exactly as we did with the displaying of the name. No research needed.
-        $get_date_query = 'UPDATE tbl_user SET user_ip= :user_ip, user_date WHERE user_id=:user_id';
+        // 1) Here, I added the user_date to our query. I called on it in our admin/index.php to display. Exactly as we did with the displaying of the name. This was added here because we want to update the user_date column with the current time so that upon next login, the data will read the last time we logged in (current time)
+        $update_user_query = 'UPDATE tbl_user SET user_ip= :user_ip, user_date = NOW(), WHERE user_id = :user_id';
         $update_user_set = $pdo->prepare($update_user_query);
         $update_user_set->execute(
             array(

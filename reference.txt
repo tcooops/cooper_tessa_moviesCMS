@@ -1,1 +1,3 @@
-﻿
+﻿How to retrieve current date and time SQL: 
+https://www.w3schools.com/sql/func_mysql_now.asp
+
