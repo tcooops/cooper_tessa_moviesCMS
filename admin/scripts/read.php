@@ -1,5 +1,7 @@
 <?php 
 
+// note, database is not secure here. reference user.php to see how the array and :placeholders secure our sql queries... also, good luck.
+
 function getAllMovies() {
     $pdo = Database::getInstance()->getConnection();
     $queryAll = "SELECT * FROM tbl_movies";

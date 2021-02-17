@@ -1,3 +1,8 @@
 ﻿How to retrieve current date and time SQL: 
 https://www.w3schools.com/sql/func_mysql_now.asp
 
+Login count:
+https://stackoverflow.com/questions/50939165/login-count-in-php
+
+Lockout:
+https://stackoverflow.com/questions/16509643/php-lockout-user-after-3-failed-log-ins-for-10-minutes
