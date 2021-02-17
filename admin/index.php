@@ -29,6 +29,8 @@ confirm_logged_in(); // this function will amke sure only a logged in user will 
         <a href="admin_logout.php">Sign Out</a>
         <br>
         <a href="../index.php">back to home</a>
+        <br>
+        <a href="admin_createuser.php">create a new user</a>
     </div>
 </body>
 </html>
