@@ -19,7 +19,7 @@ services:
       - ./database:/docker-entrypoint-initdb.d
     restart: always
     ports:
-      - 8889:3306
+      - 5000:3306
     environment:
       TZ: America/Toronto
       MYSQL_DATABASE: db_movies
@@ -38,6 +38,12 @@ services:
       PMA_USER: docker_u
       PMA_PASSWORD: docker_p
       PMA_HOSTS: mysql
+  
+  email:
+    image: mailhog/mailhog
+    ports:
+      - 6060:6060
+      - 5050:5050
 
 volumes:
   mysql:

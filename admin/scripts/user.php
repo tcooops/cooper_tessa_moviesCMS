@@ -28,7 +28,7 @@ function createUser($user_data) {
 
     if($create_user_result){
         header( "refresh:5;url=../admin/index.php" );
-        return 'A new user has been created. You will be redirected in 5 seconds';
+        return '<div class=success> A new user has been created. You will be redirected in 5 seconds</div>';
     }else {
         return 'The user was not created';
     }

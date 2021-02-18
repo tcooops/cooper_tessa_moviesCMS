@@ -7,4 +7,4 @@ function redirect_to($location=null) {
         header('Location: '.$location);
         exit;
     }
-}
+} 

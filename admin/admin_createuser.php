@@ -33,15 +33,14 @@ if(isset($_POST['submit'])) {
 <body>
     <h1>Create a new user</h1>
     <section>
-        <div id="create-user-form">
             <?php echo !empty($message)?$message:'';?>
-            <form action="admin_createuser.php" method="post">
+            <form class="form" action="admin_createuser.php" method="post">
                 <div>
-                    <label for="first_name">First Name:</label>
+                    <label id="fname" for="first_name">First Name:</label>
                     <input id="first_name" type="text" name="fname" value="">
                 </div>
                 <div>
-                    <label for="username">Username:</label>
+                    <label id="uname" for="username">Username:</label>
                     <input id="username" type="text" name="uname" value="">
                 </div>
               <!--  <div>
@@ -49,12 +48,12 @@ if(isset($_POST['submit'])) {
                     <input id="password" type="text" name="pword" value=""> NOTE: change type to password 
                 </div>  -->
                 <div>
-                    <label for="email">Email:</label>
-                    <input id="email" type="email" name="email" value="">
+                    <label id="email" for="email">Email:</label>
+                    <input type="email" name="email" value="">
                 </div>
+                <p>Note: password will be automatically generated and shared to user via email</p>
                 <button type="submit" name="submit" id="submit">Create User</button>
             </form>
-        </div>
     </section>
 </body>
 </html>
