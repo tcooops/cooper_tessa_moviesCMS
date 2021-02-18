@@ -28,9 +28,9 @@ confirm_logged_in(); // this function will amke sure only a logged in user will 
         <!-- number of times logged in will display here -->
         <a href="admin_logout.php">Sign Out</a>
         <br>
-        <a href="../index.php">back to home</a>
+        <a href="../index.php">Back to Home</a>
         <br>
-        <a href="admin_createuser.php">create a new user</a>
+        <a href="admin_createuser.php">Create a New Admin</a>
     </div>
 </body>
 </html>
