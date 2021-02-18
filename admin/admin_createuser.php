@@ -7,7 +7,6 @@ if(isset($_POST['submit'])) {
     $data = array(
         'fname'=>trim($_POST['fname']),
         'uname'=>trim($_POST['uname']),
-        'pword'=>trim($_POST['pword']),
         'email'=>trim($_POST['email'])
 
     );
@@ -45,10 +44,10 @@ if(isset($_POST['submit'])) {
                     <label for="username">Username:</label>
                     <input id="username" type="text" name="uname" value="">
                 </div>
-                <div>
+              <!--  <div>
                     <label for="password">Passowrd:</label>
-                    <input id="password" type="text" name="pword" value=""> <!-- NOTE: change type to password -->
-                </div>
+                    <input id="password" type="text" name="pword" value=""> NOTE: change type to password 
+                </div>  -->
                 <div>
                     <label for="email">Email:</label>
                     <input id="email" type="email" name="email" value="">
