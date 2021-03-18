@@ -1,3 +1,1 @@
-﻿Research Proj 2:
-
-Help with the password generating and encrypting: https://www.webslesson.info/2017/12/php-registration-script-with-email-confirmation.html
+﻿Research Proj 3:
