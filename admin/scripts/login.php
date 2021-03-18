@@ -16,12 +16,12 @@ function login($username, $password, $ip){
 
         //Write the username and user id into session
         $_SESSION['user_id'] = $found_user_id;
-        $_SESSION['user_name'] = $found_user['user_fname']; // using first name but could be username
-        // this adds the user_date to the session 
+        $_SESSION['user_name'] = $found_user['user_fname']; 
         $_SESSION['user_date'] = $found_user['user_date'];
+        $_SESSION['user_level'] = $found_user['user_level'];
         // will be adding logins here soon...
 
-        // 1) Here, I added the user_date to our query. I called on it in our admin/index.php to display. Exactly as we did with the displaying of the name. This was added here because we want to update the user_date column with the current time so that upon next login, the data will read the last time we logged in (current time)
+        
         $update_user_query = 'UPDATE tbl_user SET user_ip= :user_ip, user_date = NOW(), WHERE user_id = :user_id';
         $update_user_set = $pdo->prepare($update_user_query);
         $update_user_set->execute(
@@ -39,9 +39,13 @@ function login($username, $password, $ip){
     }
 }
 
- function confirm_logged_in(){
+ function confirm_logged_in($admin_only=false){
     if (!isset($_SESSION['user_id'])) {
         redirect_to("admin_login.php");
+    }
+
+    if (!empty($admin_only) && empty($_SESSION['user_level'])) {
+        redirect_to('index.php');
     }
 }
 
