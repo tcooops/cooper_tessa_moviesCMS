@@ -26,12 +26,14 @@ confirm_logged_in(); // this function will amke sure only a logged in user will 
         <h4>Previous login: <?php echo $_SESSION['user_date'];?></h4>
         <h4>Number of logins: <?php echo $_SESSION['logins'];?></h4>
         <h4>User level: <?php echo getCurrentUserLevel();?></h4>
-        <!-- number of times logged in will display here -->
+        <?php if(!empty($_SESSION['user_level'])):?>
+            <a href="admin_createuser.php">Create a New User</a><br>
+        <?php endif;?>
+        <a href="admin_edituser.php">Edit Profile</a>
+        <br>
         <a href="admin_logout.php">Sign Out</a>
         <br>
         <a href="../index.php">Back to Home</a>
-        <br>
-        <a href="admin_createuser.php">Create a New User</a>
     </div>
 </body>
 </html>

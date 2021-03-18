@@ -117,3 +117,46 @@ function createUser($user_data) {
 
 
 }
+
+function getSingleUser($user_id) {
+    $pdo = Database::getInstance()->getConnection();
+
+    $get_user_query = 'SELECT * FROM tbl_user WHERE user_id = :id';
+    $get_user_set = $pdo->prepare($get_user_query);
+    $result = $get_user_set->execute(
+        array(
+            ':id'=>$user_id
+        )
+    );
+
+    if($result && $get_user_set->rowCount()){
+        return $get_user_set;
+    }else{
+        return false;
+    }
+
+}
+
+function editUser($user_data){
+
+    $pdo = Database::getInstance()->getConnection();
+
+    $update_user_query = 'UPDATE tbl_user SET user_fname = :fname, user_name = :uname, user_pass = :pword, user_email = :email WHERE user_id = :id';
+    $update_user_set = $pdo->prepare($update_user_query);
+    $update_user_result = $update_user_set->execute(
+        array( 
+            ':fname'=>$user_data['fname'],
+            ':username'=>$user_data['uname'],
+            ':password'  => $user_data['pword'],
+            ':email'=>$user_data['email'],
+            ':id' => $user_data['id'],
+        )
+    );
+
+    if($update_user_result){
+        redirect_to('index.php');
+    }else{
+        return 'Cannot be updated';
+    }
+
+}
